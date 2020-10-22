@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Postcards!</title>
+  <link rel="stylesheet" href="./bulma-0.9.1/bulma/css/style.css">
+  <link rel="stylesheet" href="./bulma-0.9.1/bulma/css/bulma.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <script src="./p5.js"></script>
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+  <main>
+    <div class="title">Personalized Postcards!</div>
+
+    <div class="data-entry-mod card_wrap" style="cursor: default; padding-bottom: 100px; padding-top: 50px;">
+      <div style="padding-bottom: 50px;">
+        <p>
+          Instructions for the technical prototype:
+          <br>
+          <br>
+          1. In the text field on the left, enter cities that you've lived in throughout your life. Please enter the cities using the button, and one by one. Also, the data entry function is limited and currently only uses exact matches, with appropriate capitalization. (eg: San Francisco, Atlanta, etc.)
+          <br>
+          <br>
+          Once you've successfully added cities, their airport codes should show up on the front of the card. 
+          <br>
+          <br>
+          2. To customize the name/handle, enter it using the field on the left.
+          <br>
+          <br>
+          3. Once you've successfully added cities, their airport codes should show up on the front of the card. 
+          <br>
+          <br>
+          4. If you're happy with the list of cities, click the "Generate" button to generate a personalized postcard! 
+          <br>
+          <br>
+          I'm currently leaving this button (and function) unlocked in order to get feedback on the algorithm and recommendations to improve it. Ideally, the button only let's you generate one postcard for one set of cities.
+        </p>
+      </div>
+
+      <div class="field">
+        <div class="field is-grouped">
+          <div class="control">
+            <input class="input" id="search-field" type="text" placeholder="ex: Atlanta">
+          </div>
+          <div class="control">
+            <a class="button is-info" id="search-btn" onclick="searchDB()">
+              Search
+            </a>
+          </div>
+          <div class="field is-grouped" style="margin-left: 50px;">
+            <div class="control">
+              <input class="input" id="name-field" type="text" placeholder="Tip: use your Twitter/IG handle!">
+            </div>
+            <div class="control">
+              <a class="button is-info" id="search-btn" onclick="addName()">
+                Add
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="control" style="padding-top: 50px;">
+          <p>
+            Once the list of cities has been added to your liking, press the button below to see your personalized postcard!
+          </p>
+          <a class="button is-info" id="gen-btn" onclick="drawArt()" style="margin-top: 50px;">
+            Generate
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card_wrap">
+      <div class="cardx">
+        <div class="face front">
+          <div id="gen-sketch"></div>
+          <div id="gen-sketch-cover"></div>
+          <div class="nongen-content">
+            <div class="city-info" id="cityID"></div>
+            <div class="person-info">
+              <p>@myHandle</p> 
+            </div>
+          </div>
+
+        </div>
+        <div class="face back">
+          <div class="back-title">
+            Our experiences shape who we are, and who we will be in the future.
+          </div>
+          <div class="back-text">
+            Please take a moment to reflect on your journey, and how far you’ve come. Use this space to note down any thoughts! 
+            
+            (input space here)
+            (still a WIP, will probably change this side of the card)
+
+            <br>
+            <br>
+            <br>
+            __________________________________________________________
+            __________________________________________________________
+            __________________________________________________________
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-entry-mod card_wrap" style="cursor: default; padding-bottom: 200px; padding-top: 200px;">
+      <div>
+        <p>
+          Footer stuff.
+        </p>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>
